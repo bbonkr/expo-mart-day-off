@@ -175,7 +175,7 @@ export const Today = () => {
                     size={120}
                     color="white"
                 />
-                <Text style={[styles.text]}>{isDayOff ? '휴무' : '개점'}</Text>
+                <Text style={[styles.text]}>{isDayOff ? '휴점' : '개점'}</Text>
             </View>
             <View style={styles.footer}>
                 {!isDayOff && isNextSundayIsDayOff && (
