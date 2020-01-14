@@ -6,8 +6,11 @@ import {
     StatusBar,
     ScrollView,
     RefreshControl,
+    TouchableOpacity,
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { Actions } from 'react-native-router-flux';
+import { MenuBarView } from '../MenuBarView';
 
 const getWeekdayName = (weekday: number): string => {
     switch (weekday) {
@@ -166,6 +169,8 @@ export const Today = () => {
             }
         >
             <StatusBar barStyle="light-content" />
+            <MenuBarView />
+
             <View style={styles.header}>
                 <Text style={[styles.text]}>{formatDate(date)}</Text>
             </View>
@@ -205,6 +210,13 @@ const greenColor = '#00bf8f';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+    },
+    menu: {
+        // alignSelf: 'flex-start',
+        position: 'absolute',
+        top: 50,
+        left: 20,
+        zIndex: 100,
     },
     header: {
         flex: 1,
