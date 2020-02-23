@@ -153,6 +153,7 @@ export const Today = () => {
     return (
         <ScrollView
             contentContainerStyle={styles.container}
+            bounces={false}
             style={{ ...styles.container, backgroundColor }}
             refreshControl={
                 <RefreshControl
