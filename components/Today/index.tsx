@@ -6,9 +6,10 @@ import {
     StatusBar,
     ScrollView,
     RefreshControl,
-    PanResponderGestureState,
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
+// import { Actions } from 'react-native-router-flux';
+import { MenuBarView } from '../MenuBarView';
 
 const getWeekdayName = (weekday: number): string => {
     switch (weekday) {
@@ -168,6 +169,7 @@ export const Today = () => {
             }
         >
             <StatusBar barStyle="light-content" />
+            <MenuBarView />
 
             <View style={styles.header}>
                 <Text style={[styles.text]}>{formatDate(date)}</Text>
@@ -178,7 +180,7 @@ export const Today = () => {
                     size={120}
                     color="white"
                 />
-                <Text style={[styles.text]}>{isDayOff ? '휴무' : '개점'}</Text>
+                <Text style={[styles.text]}>{isDayOff ? '휴점' : '개점'}</Text>
             </View>
             <View style={styles.footer}>
                 {!isDayOff && isNextSundayIsDayOff && (
@@ -209,7 +211,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
-
     header: {
         flex: 1,
         justifyContent: 'flex-end',
