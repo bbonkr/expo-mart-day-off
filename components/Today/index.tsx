@@ -6,6 +6,7 @@ import {
     StatusBar,
     ScrollView,
     RefreshControl,
+    PanResponderGestureState,
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
@@ -167,6 +168,7 @@ export const Today = () => {
             }
         >
             <StatusBar barStyle="light-content" />
+
             <View style={styles.header}>
                 <Text style={[styles.text]}>{formatDate(date)}</Text>
             </View>
@@ -207,6 +209,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+
     header: {
         flex: 1,
         justifyContent: 'flex-end',
