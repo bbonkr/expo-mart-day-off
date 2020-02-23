@@ -8,6 +8,8 @@ import {
     RefreshControl,
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
+// import { Actions } from 'react-native-router-flux';
+import { MenuBarView } from '../MenuBarView';
 
 const getWeekdayName = (weekday: number): string => {
     switch (weekday) {
@@ -153,6 +155,7 @@ export const Today = () => {
     return (
         <ScrollView
             contentContainerStyle={styles.container}
+            bounces={false}
             style={{ ...styles.container, backgroundColor }}
             refreshControl={
                 <RefreshControl
@@ -166,6 +169,8 @@ export const Today = () => {
             }
         >
             <StatusBar barStyle="light-content" />
+            <MenuBarView />
+
             <View style={styles.header}>
                 <Text style={[styles.text]}>{formatDate(date)}</Text>
             </View>
